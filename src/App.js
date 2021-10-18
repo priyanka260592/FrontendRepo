@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function sayHello() {
+  const config = {
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin':'*'
+    }};
+    const res =  axios.get('http://localhost:8000/actions/')
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+
 }
+// Usage
+const App=() =>(
+  <div>
 
-export default App;
+  <button onClick={sayHello}>Default</button>
+  </div>
+)
+
+export default App
+
+
