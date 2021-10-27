@@ -42,7 +42,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       name: Check out code
-    - run: docker build --tag cookeryportal:v1 .
+    - run: docker build --tag public.ecr.aws/j8k6m6c6/cookeryportal:latest .
     
     - name: Push to ECR
       id: ecr
@@ -51,7 +51,7 @@ jobs:
         access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         region: us-east-1
-        image: cookeryportal:v1
+        image: public.ecr.aws/j8k6m6c6/cookeryportal:latest
 
 
 
