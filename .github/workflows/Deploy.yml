@@ -64,7 +64,7 @@ jobs:
       with:
           username: ${{ secrets.AWS_ACCESS_KEY_ID }}
           password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          registry: 543846769930.dkr.ecr.us-east-1.amazonaws.com
+          registry: public.ecr.aws
           
 
     - name: Build, tag, and push image to Amazon ECR
