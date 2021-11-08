@@ -93,7 +93,7 @@ jobs:
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: frontservice
-        cluster: task-definition
+        cluster: frontcluster
         wait-for-service-stability: true
 
     
